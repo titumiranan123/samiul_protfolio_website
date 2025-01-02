@@ -12,3 +12,7 @@ body {
 .inter {
   font-family: "Inter", serif;
 }
+.mark {
+  text-shadow: -1px 0 0.1px white, 0 1px 1px white, 1px 0 1px white;
+  letter-spacing: 5px;
+}
