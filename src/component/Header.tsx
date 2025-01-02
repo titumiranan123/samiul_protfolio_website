@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   return (
     <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto   mt-[40px] flex md:flex-row justify-between flex-col">
       <div className="content lg:w-[615px] w-full">
-        <h1 className="inter font-[900] text-[160px] leading-[160px] text-white">
+        <h1 className="inter  lg:text-[160px] lg:leading-[160px] text-[64px] font-[64px] text-white">
           Video Editor
         </h1>
         <span className="text-white font-[400px] dmsans text-[20px] leading-[27px] mt-[16px]">

@@ -8,8 +8,11 @@ import work4 from "./../assets/work4.png";
 import work5 from "./../assets/work5.png";
 const Mywork: React.FC = () => {
   return (
-    <div className=" px-4 lg:mt-[120px] mt-[40px]">
-      <Heading />
+    <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto  lg:mt-[120px] mt-[100px]">
+      <Heading
+        title="my works"
+        subtitle="Empower individuals and business to reach their financial aspirations"
+      />
       <div className="flex flex-col gap-5">
         <Marquee direction="right" pauseOnHover pauseOnClick>
           <img src={work1} className="ms-4" alt="" />
