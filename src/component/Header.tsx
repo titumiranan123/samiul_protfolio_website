@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   return (
     <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto   mt-[40px] flex md:flex-row justify-between flex-col">
       <div className="content lg:w-[615px] w-full">
-        <h1 className="inter  lg:text-[160px] lg:leading-[160px] text-[64px] font-[64px] text-white">
+        <h1 className="inter  lg:text-[160px] lg:leading-[160px] text-[64px] font-bold  text-white">
           Video Editor
         </h1>
         <span className="text-white font-[400px] dmsans text-[20px] leading-[27px] mt-[16px]">
@@ -18,7 +18,7 @@ const Header: React.FC = () => {
         <div className="flex gap-5 mt-[70px]">
           <Link
             to={"https://calendly.com/imonofficial2/30min?month=2024-07"}
-            className="text-white inter border p-5 w-[170px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] lg:flex hidden gap-2 items-center justify-center group bg-[#2919DD]"
+            className="text-white inter  p-5 w-[170px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] lg:flex hidden gap-2 items-center justify-center group bg-[#2919DD]"
           >
             <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">
               Hire Me Now
