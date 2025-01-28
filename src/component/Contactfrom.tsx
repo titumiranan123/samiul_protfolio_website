@@ -6,22 +6,34 @@ const Contactfrom: React.FC = () => {
   return (
     <div className="max-w-[1240px] lg:mt-[120px] md:mt-20  lg:px-0 mx-auto px-4 mt-[100px]">
       <Heading title="Contact" subtitle="" />
-      <div className="flex justify-between items-center">
-        <div className="flex flex-col gap-10">
+      <div className="flex justify-between lg:flex-row flex-col items-center gap-10 mt-20">
+        <div className="flex lg:flex-col lg:flex-nowrap flex-wrap  gap-10 text-white">
           <div>
-            <h1>Email</h1>
-            <p>hello.samiularafat@gmail.com</p>
+            <h1 className="text-[24px] leading-[32px] font-bold dmsans">
+              Email
+            </h1>
+            <p className="text-[18px] font-[400] leading-[24.3px]">
+              hello.samiularafat@gmail.com
+            </p>
           </div>
           <div>
-            <h1>Instagram</h1>
-            <p>_samiul_arafat</p>
+            <h1 className="text-[24px] leading-[32px] font-bold dmsans">
+              Instagram
+            </h1>
+            <p className="text-[18px] font-[400] leading-[24.3px]">
+              _samiul_arafat
+            </p>
           </div>
           <div>
-            <h1>LinkedIn</h1>
-            <p>samiul-arafat</p>
+            <h1 className="text-[24px] leading-[32px] font-bold dmsans">
+              LinkedIn
+            </h1>
+            <p className="text-[18px] font-[400] leading-[24.3px]">
+              samiul-arafat
+            </p>
           </div>
         </div>
-        <div className="bg-[#191919] px-5 py-8 lg:w-[563px] h-[524px] rounded-md flex-col flex justify-between items-center">
+        <div className="bg-[#191919] px-5 py-8 lg:w-[563px] w-full h-[594px] rounded-md flex-col flex gap-20 items-center">
           <h1 className="text-white font-bold text-3xl">Contact</h1>
           <form className="flex flex-col gap-5 w-full" action="">
             <div className="flex flex-col gap-2 ">
@@ -40,14 +52,11 @@ const Contactfrom: React.FC = () => {
             </div>
             <div className="flex flex-col gap-2 ">
               <label className="text-white">Message</label>
-              <input
-                type="text"
-                className="border-b bg-[#191919] outline-none focus:outline-none text-white"
-              />
+              <textarea className="border-b bg-[#191919] outline-none focus:outline-none text-white" />
             </div>
             <Link
               to={"https://calendly.com/imonofficial2/30min?month=2024-07"}
-              className="text-white inter  p-5  rounded-[16px] font-[500] text-[15px] leading-[18.15px] lg:flex hidden gap-2 items-center justify-center group bg-[#2919DD]"
+              className="text-white inter mt-20 flex   p-5  rounded-[16px] font-[500] text-[15px] leading-[18.15px] lg:flex  gap-2 items-center justify-center group bg-[#2919DD]"
             >
               <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">
                 Send Message
