@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Heading from "./Heading";
 import Marquee from "react-fast-marquee";
 import work1 from "./../assets/work1.png";
@@ -6,12 +6,29 @@ import work2 from "./../assets/work2.png";
 import work3 from "./../assets/work3.png";
 import work4 from "./../assets/work4.png";
 // import work5 from "./../assets/work5.png";
-import ReactPlayer from "react-player";
+
+import Workcard from "./Workcard";
 
 const Mywork: React.FC = () => {
-  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
-
   const videos = [
+    {
+      img: work1,
+      video: "https://www.youtube.com/watch?v=yneYAJioTzw",
+    },
+    {
+      img: work3,
+      video: "https://youtu.be/WEr-BVxL4e0?si=pU_SBfBtlXFBceC-",
+    },
+    {
+      img: work2,
+      video: "https://youtu.be/-VPVWGfVsDM?si=29rO7ybYnPccnlEw",
+    },
+    {
+      img: work4,
+      video: "https://youtu.be/WEr-BVxL4e0?si=pU_SBfBtlXFBceC-",
+    },
+  ];
+  const videos1 = [
     {
       img: work1,
       video: "https://www.youtube.com/watch?v=yneYAJioTzw",
@@ -40,38 +57,14 @@ const Mywork: React.FC = () => {
         <div className="relative overflow-hidden">
           <Marquee direction="right" pauseOnHover>
             {videos.map((item, index) => (
-              <div key={index} className="ms-4 w-[500px] h-[281px] relative">
-                <ReactPlayer
-                  url={item.video}
-                  controls
-                  width="100%"
-                  height="100%"
-                  playing={playingIndex === index}
-                  light={playingIndex !== index ? item.img : undefined}
-                  onClickPreview={() => setPlayingIndex(index)}
-                  onPlay={() => setPlayingIndex(index)}
-                  onPause={() => setPlayingIndex(null)}
-                />
-              </div>
+              <Workcard item={item} index={index} />
             ))}
           </Marquee>
         </div>
         <div className="relative overflow-hidden">
           <Marquee direction="left" pauseOnHover>
-            {videos.map((item, index) => (
-              <div key={index} className="ms-4 w-[500px] h-[281px] relative">
-                <ReactPlayer
-                  url={item.video}
-                  controls
-                  width="100%"
-                  height="100%"
-                  playing={playingIndex === index}
-                  light={playingIndex !== index ? item.img : undefined}
-                  onClickPreview={() => setPlayingIndex(index)}
-                  onPlay={() => setPlayingIndex(index)}
-                  onPause={() => setPlayingIndex(null)}
-                />
-              </div>
+            {videos1.map((item, index) => (
+              <Workcard item={item} index={index} />
             ))}
           </Marquee>
         </div>
