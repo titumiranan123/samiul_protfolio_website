@@ -4,7 +4,10 @@ import arrow from "./../assets/arrow.png";
 import { Link } from "react-router-dom";
 const Contactfrom: React.FC = () => {
   return (
-    <div className="max-w-[1240px] lg:mt-[120px] md:mt-20  lg:px-0 mx-auto px-4 mt-[100px]">
+    <div
+      id="contact"
+      className="max-w-[1240px] lg:mt-[120px] md:mt-20  lg:px-0 mx-auto px-4 mt-[100px]"
+    >
       <Heading title="Contact" subtitle="" />
       <div className="flex justify-between lg:flex-row flex-col items-center gap-10 mt-20">
         <div className="flex lg:flex-col lg:flex-nowrap flex-wrap  gap-10 text-white">
@@ -12,25 +15,39 @@ const Contactfrom: React.FC = () => {
             <h1 className="text-[24px] leading-[32px] font-bold dmsans">
               Email
             </h1>
-            <p className="text-[18px] font-[400] leading-[24.3px]">
+            <a
+              target="_black"
+              href="mailto:hello.samiularafat@gmail.com"
+              className="text-[18px] font-[400] leading-[24.3px]"
+            >
               hello.samiularafat@gmail.com
-            </p>
+            </a>
           </div>
           <div>
             <h1 className="text-[24px] leading-[32px] font-bold dmsans">
               Instagram
             </h1>
-            <p className="text-[18px] font-[400] leading-[24.3px]">
+            <Link
+              target="_blank"
+              to={"/https://www.instagram.com/_samiul_arafat/"}
+              className="text-[18px] font-[400] leading-[24.3px]"
+            >
               _samiul_arafat
-            </p>
+            </Link>
           </div>
           <div>
             <h1 className="text-[24px] leading-[32px] font-bold dmsans">
               LinkedIn
             </h1>
-            <p className="text-[18px] font-[400] leading-[24.3px]">
+            <Link
+              target="_blank"
+              to={
+                "https://www.linkedin.com/in/samiul-arafat/?originalSubdomain=bd"
+              }
+              className="text-[18px] font-[400] leading-[24.3px]"
+            >
               samiul-arafat
-            </p>
+            </Link>
           </div>
         </div>
         <div className="bg-[#191919] px-5 py-8 lg:w-[563px] w-full h-[594px] rounded-md flex-col flex gap-20 items-center">

@@ -13,6 +13,7 @@ const Contact: React.FC = () => {
         </p>
         <Link
           to={"https://calendly.com/imonofficial2/30min?month=2024-07"}
+          target="_blank"
           className="text-white inter mt-2 p-5 w-[160px] h-[58px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] lg:flex hidden  items-center  group bg-[#2919DD] justify-between"
         >
           <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">

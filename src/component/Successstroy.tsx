@@ -1,98 +1,109 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
 import julian from "./../assets/testimonial/julian.png";
 import cia from "./../assets/testimonial/cia.png";
 import marc from "./../assets/testimonial/marc.png";
+import breanna from "./../assets/testimonial/breanna.png";
+import { Navigation, Pagination } from "swiper/modules";
 import Heading from "./Heading";
-const Successstroy: React.FC = () => {
+
+const Successstory: React.FC = () => {
+  const testimonialsData = [
+    {
+      id: 1,
+      name: "Julian De Graaf",
+      role: "CEO, Elite Rentals",
+      image: julian,
+      videoUrl: "https://vimeo.com/1007475654?share=copy",
+    },
+    {
+      id: 2,
+      name: "Cia E",
+      role: "Trauma Recovery & Relationship Coach",
+      image: cia,
+      videoUrl: "https://vimeo.com/1007476080?share=copy",
+    },
+    {
+      id: 3,
+      name: "Marc Palombo",
+      role: "Actor, The Talent Group",
+      image: marc,
+      videoUrl: "https://vimeo.com/1007476337?share=copy",
+    },
+    {
+      id: 4,
+      name: "Breanna Danielle MS",
+      role: "Inner Health Coach",
+      image: breanna,
+      videoUrl: "https://vimeo.com/1015207826?share=copy",
+    },
+  ];
+
   return (
-    <div className="max-w-[1240px] lg:mt-[120px] md:mt-20  lg:px-0 mx-auto px-4 mt-[100px]">
+    <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[120px] mt-[100px] relative">
       <Heading title="Testimonial" subtitle="" />
-      <div className="mt-12 gap-4 grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 lg:gap-10">
-        <div className="md:w-[386px] md:h-[784px] h-[660px] bg-[#0e141e] ps-[26px] pt-[26px] pe-[26px] pb-[44px] rounded-[24px]">
-          <div className="md:w-[334px] w-full  rounded-[12px] md:h-[594px] h-[491px] overflow-hidden">
-            <ReactPlayer
-              url={`https://vimeo.com/1007475654?share=copy`}
-              controls
-              width="100%"
-              height="100%"
-            />
-          </div>
-          <div className="flex gap-5 items-center mt-10">
-            <div>
-              <img
-                src={julian}
-                className=" w-[80px] h-[80px] rounded-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <h1 className="semibold md:text-[24px] text-[20px] text-[#D9D9D9]">
-                Julian De Graaf
-              </h1>
-              <p className="regular font-[600] md:text-[20px] text-[14px] text-[#D9D9D9] md:leading-[25.6px] leading-[16px]">
-                CEO , Elite Rentals
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="md:w-[386px] md:h-[784px] h-[660px] bg-[#0e141e] ps-[26px] pt-[26px] pe-[26px] pb-[44px] rounded-[24px]">
-          <div className="md:w-[334px] w-full  rounded-[12px] md:h-[594px] h-[491px] overflow-hidden">
-            <ReactPlayer
-              url={`https://vimeo.com/1007476080?share=copy`}
-              controls
-              width="100%"
-              height="100%"
-            />
-          </div>
-          <div className="flex gap-5 items-center mt-10">
-            <div>
-              <img
-                src={cia}
-                className=" w-[100px] h-[80px] rounded-full "
-                alt=""
-              />
-            </div>
-            <div>
-              <h1 className="semibold md:text-[24px] text-[20px] text-[#D9D9D9]">
-                Cia E
-              </h1>
-              <p className="regular font-[600] md:text-[20px] text-[14px] text-[#D9D9D9] md:leading-[25.6px] leading-[16px]">
-                Trauma Recovery & Relationship Coach
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="md:w-[386px] md:h-[784px] h-[660px] bg-[#0e141e] ps-[26px] pt-[26px] pe-[26px] pb-[44px] rounded-[24px]">
-          <div className="md:w-[334px] w-full  rounded-[12px] md:h-[594px] h-[491px] overflow-hidden">
-            <ReactPlayer
-              url={`https://vimeo.com/1007476337?share=copy`}
-              controls
-              width="100%"
-              height="100%"
-            />
-          </div>
-          <div className="flex gap-5 items-center mt-10">
-            <div>
-              <img
-                src={marc}
-                className=" w-[80px] h-[80px] rounded-full"
-                alt=""
-              />
-            </div>
-            <div>
-              <h1 className="semibold md:text-[24px] text-[20px] text-[#D9D9D9]">
-                Marc Palombo
-              </h1>
-              <p className="regular font-[600] md:text-[20px] text-[14px] text-[#D9D9D9] md:leading-[25.6px] leading-[16px]">
-                Actor, The Talent Group
-              </p>
-            </div>
-          </div>
-        </div>
+
+      <div className="mt-12 h-[900px]">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={30}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20, // Adjust space for mobile
+            },
+
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 40, // Adjust space for larger screens
+            },
+          }}
+          className="swipers"
+        >
+          {testimonialsData.map((testimonial) => (
+            <SwiperSlide key={testimonial.id}>
+              <div className="md:w-[386px] mx-auto md:h-[784px] h-[660px] bg-[#0e141e] ps-[26px] pt-[26px] pe-[26px] pb-[44px] rounded-[24px]">
+                <div className="md:w-[334px] w-full  rounded-[12px] md:h-[594px] h-[491px] overflow-hidden">
+                  <ReactPlayer
+                    url={testimonial.videoUrl}
+                    controls
+                    width="100%"
+                    height="100%"
+                    className="rounded-[12px]"
+                  />
+                </div>
+                <div className="flex gap-5 items-center mt-10">
+                  <div className="w-[80px] h-[80px] rounded-full overflow-hidden">
+                    <img
+                      src={testimonial.image}
+                      className=" w-[100px] h-[80px] rounded-full "
+                      alt={testimonial.name}
+                    />
+                  </div>
+                  <div>
+                    <h1 className="semibold md:text-[24px] text-[20px] text-[#D9D9D9]">
+                      {testimonial.name}
+                    </h1>
+                    <p className="regular font-[500] md:text-[20px] text-[14px] text-[#D9D9D9] md:leading-[25.6px] leading-[16px]">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
 };
 
-export default Successstroy;
+export default Successstory;

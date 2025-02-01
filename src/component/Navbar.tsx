@@ -20,15 +20,15 @@ const Navbar: React.FC = () => {
         <Link className="text-[20px] font-[700]" to="#">
           Home
         </Link>
-        <Link className="text-[20px] font-[500]" to="#">
+        <a className="text-[20px] font-[500]" href="#works">
           Works
-        </Link>
-        <Link className="text-[20px] font-[500]" to="#">
+        </a>
+        <a className="text-[20px] font-[500]" href="#about">
           About
-        </Link>
-        <Link className="text-[20px] font-[500]" to="#">
+        </a>
+        <a className="text-[20px] font-[500]" href="#contact">
           Contact
-        </Link>
+        </a>
       </div>
       <Link
         to={"https://calendly.com/imonofficial2/30min?month=2024-07"}

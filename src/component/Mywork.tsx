@@ -48,7 +48,10 @@ const Mywork: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[120px] mt-[100px] relative">
+    <div
+      id="works"
+      className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[120px] mt-[100px] relative"
+    >
       <Heading
         title="my works"
         subtitle="Empower individuals and business to reach their financial aspirations"
