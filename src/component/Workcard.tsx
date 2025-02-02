@@ -10,7 +10,10 @@ interface cardProp {
 const Workcard: React.FC<cardProp> = ({ item, index }) => {
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
   return (
-    <div className="ms-4 w-[500px] h-[281px] relative">
+    <div
+      onMouseLeave={() => setPlayingIndex(null)}
+      className="ms-4 md:w-[500px] md:h-[281px] w-[300px] h-[169px] relative"
+    >
       <ReactPlayer
         url={item.video}
         controls

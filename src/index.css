@@ -62,11 +62,16 @@ body {
 .swiper {
   height: 818px !important;
 }
-
+.slick-slide {
+  width: 510px !important;
+}
 @media (max-width: 640px) {
   .swiper {
     height: 540px !important;
     width: 300px !important;
+  }
+  .slick-slide {
+    width: 330px !important;
   }
   .swipers {
     height: 698px !important;

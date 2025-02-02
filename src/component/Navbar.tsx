@@ -32,6 +32,7 @@ const Navbar: React.FC = () => {
       </div>
       <Link
         to={"https://calendly.com/imonofficial2/30min?month=2024-07"}
+        target="_blank"
         className="text-white inter border p-5 w-[170px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] lg:flex hidden gap-2 items-center justify-center group"
       >
         <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">

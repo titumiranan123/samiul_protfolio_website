@@ -50,7 +50,7 @@ const Contactfrom: React.FC = () => {
             </Link>
           </div>
         </div>
-        <div className="bg-[#191919] px-5 py-8 lg:w-[563px] w-full h-[594px] rounded-md flex-col flex gap-20 items-center">
+        <div className="bg-[#191919] p-10 lg:w-[563px] w-full h-[594px]  flex-col flex gap-20 items-center rounded-[20px]">
           <h1 className="text-white font-bold text-3xl">Contact</h1>
           <form className="flex flex-col gap-5 w-full" action="">
             <div className="flex flex-col gap-2 ">
@@ -73,6 +73,7 @@ const Contactfrom: React.FC = () => {
             </div>
             <Link
               to={"https://calendly.com/imonofficial2/30min?month=2024-07"}
+              target="_blank"
               className="text-white inter mt-20 flex   p-5  rounded-[16px] font-[500] text-[15px] leading-[18.15px] lg:flex  gap-2 items-center justify-center group bg-[#2919DD]"
             >
               <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">

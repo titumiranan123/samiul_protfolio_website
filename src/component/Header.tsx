@@ -52,21 +52,33 @@ const Header: React.FC = () => {
       </div>
       <div className="relative">
         <div className=" flex absolute right-0">
-          <div className="flex  translate-x-10">
-            <img src={user1} className="" alt="user1" />
-            <img src={user2} className="-translate-x-4" alt="user1" />
-            <img src={user3} className="-translate-x-9" alt="user1" />
+          <div className="flex  md:translate-x-10 translate-x-9">
+            <img
+              src={user1}
+              className="md:w-[61.68px] md:h-[61.68px] rounded-full w-[45px] h-[45px]"
+              alt="user1"
+            />
+            <img
+              src={user2}
+              className="-translate-x-4 md:w-[61.68px] md:h-[61.68px] rounded-full w-[45px] h-[45px]"
+              alt="user1"
+            />
+            <img
+              src={user3}
+              className="-translate-x-9 md:w-[61.68px] md:h-[61.68px] rounded-full w-[45px] h-[45px]"
+              alt="user1"
+            />
           </div>
-          <div className="w-[190px] h-[61px] bg-[#191919] p-[20.84px] text-white inter font-[600] text-[16.82px] leading-[20.36px] -translate-x-4  rounded-[56px]">
+          <div className="md:w-[190px] w-[140px] md:h-[61px] h-[45px]  bg-[#191919] md:p-[20.84px] p-[8px] text-white inter font-[600] md:text-[16.82px] md:leading-[20.36px] text-[13px] -translate-x-4  rounded-[56px]">
             2k+ Happy Clients
           </div>
         </div>
         <img src={user} alt="" />
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className="absolute bottom-0 left-0 w-[191px] h-[68px] bg-[#191919] p-[20.84px] text-white inter font-[400] text-[18.82px] leading-[24.36px]   rounded-[56px] flex items-center justify-center gap-3 cursor-pointer"
+          className="absolute -bottom-[6px] md:bottom-0 left-0 md:w-[191px] w-[141px] md:h-[68px] h-[55px] bg-[#191919] md:p-[20.84px]  text-white inter font-[400] md:text-[18.82px] md:leading-[24.36px] text-[14px]  rounded-[56px] flex items-center justify-center gap-3 cursor-pointer lg:mt-0 mt-3"
         >
-          <img src={playbutton} alt="" />
+          <img className="w-4 h-4 md:h-6 md:w-6" src={playbutton} alt="" />
           <span>Play Intro</span>
         </div>
       </div>
