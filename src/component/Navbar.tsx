@@ -13,6 +13,9 @@ const Navbar: React.FC = () => {
   //       </Link>
   //     );
   //   };
+  const toggole = () => {
+    setOpen(!isOpen);
+  };
   return (
     <div className="max-w-[1440px] lg:px-[110px] px-4 lg:py-10 md:py-8 py-8 mx-auto flex justify-between items-center inter relative">
       <img src={logo} alt="logo" />
@@ -62,16 +65,28 @@ const Navbar: React.FC = () => {
             <img className="w-8 h-8" src={close} alt="close" />
           </div>
           <div className="flex flex-col items-center justify-center gap-1 h-full">
-            <Link className="text-[20px] font-[700]" to="#">
+            <Link onClick={toggole} className="text-[20px] font-[700]" to="#">
               Home
             </Link>
-            <Link className="text-[20px] font-[500]" to="#">
+            <Link
+              onClick={toggole}
+              className="text-[20px] font-[500]"
+              to="#works"
+            >
               Works
             </Link>
-            <Link className="text-[20px] font-[500]" to="#">
+            <Link
+              onClick={toggole}
+              className="text-[20px] font-[500]"
+              to="#about"
+            >
               About
             </Link>
-            <Link className="text-[20px] font-[500]" to="#">
+            <Link
+              onClick={toggole}
+              className="text-[20px] font-[500]"
+              to="#contact"
+            >
               Contact
             </Link>
           </div>

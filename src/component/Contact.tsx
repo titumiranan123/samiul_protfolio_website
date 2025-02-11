@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import arrow from "./../assets/arrow.png";
 const Contact: React.FC = () => {
   return (
-    <div className=" max-w-[1440px] lg:px-[110px] px-4 mx-auto  lg:mt-[120px] mt-[40px] ">
-      <div className="rounded-[16px] flex justify-center items-center flex-col gap-4 bg-[#191919] shadow-md max-w-[1200px] mx-auto h-[300px] py-[50px]">
+    <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[100px] mt-[80px]">
+      <div className="rounded-[16px] flex justify-center items-center flex-col gap-4 bg-[#191919] shadow-md max-w-[1200px] mx-auto h-[300px] py-[50px] px-5">
         <h1 className="inter font-bold italic lg:text-[64px] lg:leading-[76.6px] text-[24px] leading-[24px] text-white ">
           Have A project ?
         </h1>
-        <p className="text-white inter lg:text-[20px] lg:leading-[26.5px] text-[16px] leading-[19.5px] font-[400] text-center">
+        <p className="text-white inter lg:text-[20px] lg:leading-[26.5px] text-[16px] leading-[22.5px] font-[400] text-center">
           I am always available to take your projet to the next level.
         </p>
         <Link

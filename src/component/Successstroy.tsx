@@ -45,10 +45,10 @@ const Successstory: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[120px] mt-[100px] relative">
+    <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[100px] mt-[80px] relative">
       <Heading title="Testimonial" subtitle="" />
 
-      <div className="mt-12 h-[900px]">
+      <div className="mt-12 md:h-[900px]">
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={30}

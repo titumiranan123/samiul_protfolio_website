@@ -10,7 +10,7 @@ import Contactfrom from "../component/Contactfrom";
 
 const Home: React.FC = () => {
   return (
-    <div className="">
+    <div className="overflow-hidden">
       <Navbar />
       <Header />
       <Mywork />

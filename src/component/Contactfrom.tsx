@@ -6,7 +6,7 @@ const Contactfrom: React.FC = () => {
   return (
     <div
       id="contact"
-      className="max-w-[1240px] lg:mt-[120px] md:mt-20  lg:px-0 mx-auto px-4 mt-[100px]"
+      className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[100px] mt-[80px]"
     >
       <Heading title="Contact" subtitle="" />
       <div className="flex justify-between lg:flex-row flex-col items-center gap-10 mt-20">

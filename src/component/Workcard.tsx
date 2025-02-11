@@ -6,13 +6,20 @@ interface cardProp {
     img: string;
   };
   index: number;
+  onPlayChange: (isPlaying: boolean) => void;
 }
 const Workcard: React.FC<cardProp> = ({ item, index }) => {
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+  const handlePlay = () => {
+    setPlayingIndex(index);
+  };
+  const handlePause = () => {
+    setPlayingIndex(index);
+  };
   return (
     <div
-      onMouseLeave={() => setPlayingIndex(null)}
-      className="ms-4 md:w-[500px] md:h-[281px] w-[300px] h-[169px] relative"
+      // onMouseLeave={() => setPlayingIndex(null)}
+      className="ms-4 md:w-[500px] md:h-[281px] w-[280px] h-[169px] relative"
     >
       <ReactPlayer
         url={item.video}
@@ -21,9 +28,9 @@ const Workcard: React.FC<cardProp> = ({ item, index }) => {
         height="100%"
         playing={playingIndex === index}
         light={playingIndex !== index ? item.img : undefined}
-        onClickPreview={() => setPlayingIndex(index)}
-        onPlay={() => setPlayingIndex(index)}
-        onPause={() => setPlayingIndex(null)}
+        onClickPreview={handlePlay}
+        onPlay={handlePlay}
+        onPause={handlePause}
       />
     </div>
   );

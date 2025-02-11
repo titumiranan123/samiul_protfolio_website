@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   return (
     <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto   mt-[40px] flex md:flex-row justify-between flex-col ">
       <div className="content lg:w-[615px] w-full">
-        <h1 className="inter  lg:text-[160px] lg:leading-[160px] text-[64px] font-bold uppercase text-white">
+        <h1 className="inter  lg:text-[160px] lg:leading-[160px] text-[64px] leading-[72px] lg:mb-0 mb-3 font-bold uppercase text-white">
           Video Editor
         </h1>
         <span className="text-white lg:w-[615px] font-[400px] dmsans text-[20px] leading-[27px] mt-[16px] tracking-tighter">
@@ -52,31 +52,31 @@ const Header: React.FC = () => {
       </div>
       <div className="relative">
         <div className=" flex absolute right-0">
-          <div className="flex  md:translate-x-10 translate-x-9">
+          <div className="flex  md:translate-x-10 translate-x-[45px]">
             <img
               src={user1}
-              className="md:w-[61.68px] md:h-[61.68px] rounded-full w-[45px] h-[45px]"
+              className="md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px]"
               alt="user1"
             />
             <img
               src={user2}
-              className="-translate-x-4 md:w-[61.68px] md:h-[61.68px] rounded-full w-[45px] h-[45px]"
+              className="-translate-x-4 md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px]"
               alt="user1"
             />
             <img
               src={user3}
-              className="-translate-x-9 md:w-[61.68px] md:h-[61.68px] rounded-full w-[45px] h-[45px]"
+              className="-translate-x-9 md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px]"
               alt="user1"
             />
           </div>
-          <div className="md:w-[190px] w-[140px] md:h-[61px] h-[45px]  bg-[#191919] md:p-[20.84px] p-[8px] text-white inter font-[600] md:text-[16.82px] md:leading-[20.36px] text-[13px] -translate-x-4  rounded-[56px]">
+          <div className="md:w-[190px] w-[130px] md:h-[61px] h-[42px]  bg-[#191919] md:p-[20.84px] p-[6px] flex justify-center items-center text-white inter font-[600] md:text-[16.82px] md:leading-[20.36px] text-[12px] -translate-x-1  rounded-[56px]">
             2k+ Happy Clients
           </div>
         </div>
         <img src={user} alt="" />
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className="absolute -bottom-[6px] md:bottom-0 left-0 md:w-[191px] w-[141px] md:h-[68px] h-[55px] bg-[#191919] md:p-[20.84px]  text-white inter font-[400] md:text-[18.82px] md:leading-[24.36px] text-[14px]  rounded-[56px] flex items-center justify-center gap-3 cursor-pointer lg:mt-0 mt-3"
+          className="absolute bottom-[4px] md:bottom-0 left-0 md:w-[191px] w-[115px] md:h-[68px] h-[42px] bg-[#191919] md:p-[20.84px]  text-white inter font-[400] md:text-[18.82px] md:leading-[24.36px] text-[14px]  rounded-[56px] flex items-center justify-center gap-3 cursor-pointer lg:mt-0 mt-3"
         >
           <img className="w-4 h-4 md:h-6 md:w-6" src={playbutton} alt="" />
           <span>Play Intro</span>
