@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 // import Workcard from "./Workcard";
 import Slider from "react-slick";
-import NewworkCard from "./Newworkcard";
+// import NewworkCard from "./Newworkcard";
 import Workcard from "./Workcard";
 
 const Mywork: React.FC = () => {
