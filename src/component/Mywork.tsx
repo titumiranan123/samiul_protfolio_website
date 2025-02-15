@@ -3,8 +3,10 @@ import Heading from "./Heading";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Workcard from "./Workcard";
+// import Workcard from "./Workcard";
 import Slider from "react-slick";
+import NewworkCard from "./Newworkcard";
+import Workcard from "./Workcard";
 
 const Mywork: React.FC = () => {
   const [data, setData] = useState([]);
@@ -17,6 +19,8 @@ const Mywork: React.FC = () => {
     infinite: true,
     slidesToShow: 2,
     slidesToScroll: 1,
+    centerMode: true,
+    variableWidth: true,
     autoplay: !isVideoPlaying, // Disable autoplay when video is playing
     speed: 6000,
     autoplaySpeed: 6000,
@@ -52,6 +56,9 @@ const Mywork: React.FC = () => {
       <div className="mt-6 flex relative flex-col gap-5">
         <div className="relative overflow-hidden">
           <Slider {...sliderSettings(false)}>
+            {/* {data.map((item, index) => (
+              <NewworkCard key={index} item={item} />
+            ))} */}
             {data.map((item, index) => (
               <Workcard
                 key={index}
@@ -72,6 +79,9 @@ const Mywork: React.FC = () => {
                 onPlayChange={setIsVideoPlaying}
               />
             ))}
+            {/* {data.map((item, index) => (
+              <NewworkCard key={index} item={item} />
+            ))} */}
           </Slider>
         </div>
       </div>
