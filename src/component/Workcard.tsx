@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import ReactPlayer from "react-player";
 interface cardProp {
   item: {
-    video: string;
-    img: string;
+    video_link: string;
+    thumbnail: string;
+    video_category: string;
   };
   index: number;
   onPlayChange: (isPlaying: boolean) => void;
@@ -22,12 +23,12 @@ const Workcard: React.FC<cardProp> = ({ item, index }) => {
       className="ms-4 md:w-[500px] md:h-[281px] w-[280px] h-[169px] relative"
     >
       <ReactPlayer
-        url={item.video}
+        url={item.video_link}
         controls
         width="100%"
         height="100%"
         playing={playingIndex === index}
-        light={playingIndex !== index ? item.img : undefined}
+        light={playingIndex !== index ? item.thumbnail : undefined}
         onClickPreview={handlePlay}
         onPlay={handlePlay}
         onPause={handlePause}

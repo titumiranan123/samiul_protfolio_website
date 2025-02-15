@@ -1,5 +1,6 @@
 import React from "react";
 import Heading from "./Heading";
+import { Link } from "react-router-dom";
 
 const About: React.FC = () => {
   return (
@@ -12,8 +13,23 @@ const About: React.FC = () => {
         <p className="dmsans font-[400] text-[20px] leading-[27px] text-white">
           Hi there! I'm Samiul Arafat Imon, your go-to video editor and
           full-time digital content creator since 2016. With over 100k followers
-          on platforms like YouTube and Facebook, I bring a wealth of experience
-          and expertise. <br />
+          on platforms like{" "}
+          <Link
+            className="underline"
+            to={"https://www.youtube.com/@montagemotion77"}
+            target="_blank"
+          >
+            Youtube
+          </Link>{" "}
+          and{" "}
+          <Link
+            className="underline"
+            to={"Facebookhttps://www.facebook.com/Samiul.Bhaiya/"}
+            target="_blank"
+          >
+            Facebook
+          </Link>
+          , I bring a wealth of experience and expertise. <br />
           <br />
           Throughout my career, I've had the pleasure of collaborating with
           clients from over 30 countries and working with numerous international

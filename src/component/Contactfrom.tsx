@@ -50,7 +50,7 @@ const Contactfrom: React.FC = () => {
             </Link>
           </div>
         </div>
-        <div className="bg-[#191919] p-10 lg:w-[563px] w-full h-[594px]  flex-col flex gap-20 items-center rounded-[20px]">
+        <div className="bg-[#191919] md:p-10 p-4 lg:w-[563px] w-full h-[594px]  flex-col flex gap-20 items-center rounded-[20px]">
           <h1 className="text-white font-bold text-3xl">Contact</h1>
           <form className="flex flex-col gap-5 w-full" action="">
             <div className="flex flex-col gap-2 ">
