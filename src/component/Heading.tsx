@@ -1,12 +1,23 @@
-import React from "react";
+import Aos from "aos";
+import React, { useEffect } from "react";
 interface prop {
   title: string;
   subtitle: string;
 }
 const Heading: React.FC<prop> = ({ title, subtitle }) => {
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in-out",
+    });
+  }, []);
   return (
     <div className=" flex justify-center flex-col items-center gap-1 inter">
-      <div className="flex justify-center items-center flex-col">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        className="flex justify-center items-center flex-col"
+      >
         <h1 className="lg:text-[200px] lg:leading-[240px] text-[44px] leading-[67.2px] italic text-black mark uppercase opacity-30 stroke-white stroke-1 font-bold text-center flex justify-center items-center ms-5">
           {title}
         </h1>

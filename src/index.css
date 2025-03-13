@@ -50,6 +50,9 @@ body {
   background: #9391a8;
   height: 12px !important;
   width: 12px;
+  /* position: absolute !important;
+  right: 0 !important;
+  top: 50% !important; */
   transition: all ease-in-out 500ms;
 }
 
@@ -62,17 +65,15 @@ body {
 .swiper {
   height: 818px !important;
 }
-/* .slick-slide {
-  width: 510px !important;
-} */
+
 @media (max-width: 640px) {
   .swiper {
     height: 540px !important;
     width: 300px !important;
   }
-  /* .slick-slide {
-    width: 300px !important;
-  } */
+  .slick-list {
+    height: 180px !important;
+  }
   .swipers {
     height: 698px !important;
   }
@@ -87,4 +88,44 @@ body {
     width: 600px !important;
     margin: 0 auto;
   }
+}
+
+/* Fade-in animation from bottom to top */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px); /* Start 20px below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in-up 1.5s ease-in-out; /* Smooth and slow animation */
+}
+
+.swiper-pagination {
+  position: absolute;
+  left: 50px; /* ডান পাশে সরিয়ে নেবে */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column; /* ডটগুলো ভাটিক্যাল অবস্থানে থাকবে */
+  gap: 10px;
+}
+
+.custom-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.custom-dot.swiper-pagination-bullet-active {
+  background-color: #1138e6;
+  height: 20px !important;
 }

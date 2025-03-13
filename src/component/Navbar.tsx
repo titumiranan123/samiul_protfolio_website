@@ -3,19 +3,14 @@ import logo from "./../assets/logo.png";
 import arrow from "./../assets/arrow.png";
 import { Link } from "react-router-dom";
 import close from "./../assets/close.png";
+
 const Navbar: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
-  //   const Customroute = ({ href, title, className }) => {
-  //     const path = useLocation()
-  //     return (
-  //       <Link to={href} className={`${className}`}>
-  //         {title}
-  //       </Link>
-  //     );
-  //   };
-  const toggole = () => {
+
+  const toggle = () => {
     setOpen(!isOpen);
   };
+
   return (
     <div className="max-w-[1440px] lg:px-[110px] px-4 lg:py-10 md:py-8 py-8 mx-auto flex justify-between items-center inter relative">
       <img src={logo} alt="logo" />
@@ -48,8 +43,8 @@ const Navbar: React.FC = () => {
         />
       </Link>
       <div
-        onClick={() => setOpen(!isOpen)}
-        className="lg:hidden  flex flex-col gap-[6px]"
+        onClick={toggle}
+        className="lg:hidden flex flex-col gap-[6px] cursor-pointer"
       >
         <span className="w-7 h-[3px] bg-white"></span>
         <span className="w-7 h-[3px] bg-white"></span>
@@ -57,38 +52,38 @@ const Navbar: React.FC = () => {
       </div>
       {isOpen && (
         // mobile navigation
-        <div className="bg-white absolute w-full top-0 h-[300px] left-0 rounded-[20px]  ">
+        <div className="bg-white absolute w-full top-0 h-[300px] left-0 rounded-[20px] z-50">
           <div
-            onClick={() => setOpen(!isOpen)}
-            className="flex flex-col absolute top-[40px] right-[20px] "
+            onClick={toggle}
+            className="flex flex-col absolute top-[40px] right-[20px] cursor-pointer"
           >
             <img className="w-8 h-8" src={close} alt="close" />
           </div>
           <div className="flex flex-col items-center justify-center gap-1 h-full">
-            <Link onClick={toggole} className="text-[20px] font-[700]" to="#">
+            <a onClick={toggle} className="text-[20px] font-[700]" href="#">
               Home
-            </Link>
-            <Link
-              onClick={toggole}
+            </a>
+            <a
+              onClick={toggle}
               className="text-[20px] font-[500]"
-              to="#works"
+              href="#works"
             >
               Works
-            </Link>
-            <Link
-              onClick={toggole}
+            </a>
+            <a
+              onClick={toggle}
               className="text-[20px] font-[500]"
-              to="#about"
+              href="#about"
             >
               About
-            </Link>
-            <Link
-              onClick={toggole}
+            </a>
+            <a
+              onClick={toggle}
               className="text-[20px] font-[500]"
-              to="#contact"
+              href="#contact"
             >
               Contact
-            </Link>
+            </a>
           </div>
         </div>
       )}

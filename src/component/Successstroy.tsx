@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useRef, useState } from "react";
 import ReactPlayer from "react-player";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,6 +15,13 @@ import Heading from "./Heading";
 
 const Successstory: React.FC = () => {
   const testimonialsData = [
+    {
+      id: 4,
+      name: "Breanna Danielle MS",
+      role: "Inner Health Coach",
+      image: breanna,
+      videoUrl: "https://vimeo.com/1015207826?share=copy",
+    },
     {
       id: 1,
       name: "Julian De Graaf",
@@ -35,14 +43,9 @@ const Successstory: React.FC = () => {
       image: marc,
       videoUrl: "https://vimeo.com/1007476337?share=copy",
     },
-    {
-      id: 4,
-      name: "Breanna Danielle MS",
-      role: "Inner Health Coach",
-      image: breanna,
-      videoUrl: "https://vimeo.com/1015207826?share=copy",
-    },
   ];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef<any>(null); // Swiper reference
 
   return (
     <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[100px] mt-[80px] relative">
@@ -54,16 +57,17 @@ const Successstory: React.FC = () => {
           spaceBetween={30}
           slidesPerView={1}
           navigation
-          pagination={{ clickable: true }}
+          loop={false}
+          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+          onSwiper={(swiper) => (swiperRef.current = swiper)} // Store Swiper instance
           breakpoints={{
             640: {
               slidesPerView: 1,
-              spaceBetween: 20, // Adjust space for mobile
+              spaceBetween: 20,
             },
-
             1024: {
               slidesPerView: 3,
-              spaceBetween: 40, // Adjust space for larger screens
+              spaceBetween: 40,
             },
           }}
           className="swipers"
@@ -71,7 +75,7 @@ const Successstory: React.FC = () => {
           {testimonialsData.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
               <div className="md:w-[386px] mx-auto md:h-[784px] h-[660px] bg-[#0e141e] ps-[26px] pt-[26px] pe-[26px] pb-[44px] rounded-[24px]">
-                <div className="md:w-[334px] w-full  rounded-[12px] md:h-[594px] h-[491px] overflow-hidden">
+                <div className="md:w-[334px] w-full rounded-[12px] md:h-[594px] h-[491px] overflow-hidden">
                   <ReactPlayer
                     url={testimonial.videoUrl}
                     controls
@@ -84,7 +88,7 @@ const Successstory: React.FC = () => {
                   <div className="w-[80px] h-[80px] rounded-full overflow-hidden">
                     <img
                       src={testimonial.image}
-                      className=" w-[100px] h-[80px] rounded-full "
+                      className="w-[100px] h-[80px] rounded-full"
                       alt={testimonial.name}
                     />
                   </div>
@@ -101,6 +105,21 @@ const Successstory: React.FC = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        {/* Custom Pagination (Right Side) */}
+        <div className="absolute right-16 top-[60%] transform -translate-y-1/2 flex flex-col gap-3">
+          {testimonialsData.slice(0, -2).map((_, index) => (
+            <div
+              key={index}
+              className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
+                activeIndex === index ? "bg-[#1c2bf8] h-8 " : "bg-gray-400 h-3"
+              }`}
+              onClick={() => {
+                swiperRef.current?.slideTo(index); // Change slide on click
+                setActiveIndex(index); // Update active state
+              }}
+            ></div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,32 +1,53 @@
-import React, { useState } from "react";
-import user from "./../assets/samiul.png";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ReactPlayer from "react-player";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import user from "./../assets/samiul.png";
 import arrow from "./../assets/arrow.png";
 import user1 from "./../assets/user1.png";
 import user2 from "./../assets/user2.png";
 import user3 from "./../assets/user3.png";
 import playbutton from "./../assets/play.png";
-import ReactPlayer from "react-player";
+
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
-    <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto   mt-[40px] flex md:flex-row justify-between flex-col ">
-      <div className="content lg:w-[615px] w-full">
-        <h1 className="inter  lg:text-[160px] lg:leading-[160px] text-[64px] leading-[72px] lg:mb-0 mb-3 font-bold uppercase text-white">
+    <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto mt-[40px] flex md:flex-row justify-between flex-col">
+      {/* Left Content */}
+      <div className="content lg:w-[615px] h-[450px]  w-full">
+        <h1
+          data-aos="fade-right"
+          className="inter lg:text-[160px] lg:leading-[160px] text-[64px] leading-[72px] lg:mb-0 mb-3 font-[900] uppercase text-white"
+        >
           Video Editor
         </h1>
-        <span className="text-white lg:w-[615px] font-[400px] dmsans text-[20px] leading-[27px] mt-[16px] tracking-tighter">
+        <p
+          data-aos="fade-up"
+          data-aos-delay="100"
+          className="text-white lg:w-[615px] font-[400] text-[20px] leading-[27px] mt-[16px] tracking-tighter"
+        >
           Hi, I am Samiul, helping Podcasters & Coaches with Video Editing and
           Thumbnail Design
-        </span>
-        <div className="flex gap-5 mt-[70px]">
+        </p>
+
+        {/* Buttons */}
+        <div className="flex gap-4 mt-[70px] animate-fade-in">
           <Link
             target="_blank"
-            to={"https://calendly.com/imonofficial2/30min?month=2024-07"}
-            className="text-white inter  p-5 w-[170px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] lg:flex hidden gap-2 items-center justify-center group bg-[#2919DD]"
+            to="https://calendly.com/imonofficial2/30min?month=2024-07"
+            className="text-white inter md:p-5 md:py-0 md:px-0 py-5 px-3 md:w-[170px] w-[150px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] flex  gap-2 items-center justify-center group bg-[#2919DD] hover:bg-[#1e14b3] transition-all"
           >
             <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">
-              Hire Me Now
+              Contact Now
             </span>
             <img
               src={arrow}
@@ -34,10 +55,11 @@ const Header: React.FC = () => {
               className="w-[20px] group-hover:translate-x-1 transition-all duration-200 ease-in-out"
             />
           </Link>
+
           <Link
             target="_blank"
-            to={"https://calendly.com/imonofficial2/30min?month=2024-07"}
-            className="text-white inter border p-5 w-[170px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] lg:flex hidden gap-2 items-center justify-center group"
+            to="https://calendly.com/imonofficial2/30min?month=2024-07"
+            className="text-white inter border md:p-5 p-3 md:w-[170px] w-[150px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] flex  gap-2 items-center justify-center group hover:bg-white hover:text-black transition-all"
           >
             <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">
               Book a Call
@@ -50,47 +72,60 @@ const Header: React.FC = () => {
           </Link>
         </div>
       </div>
-      <div className="relative">
-        <div className=" flex absolute right-0">
-          <div className="flex  md:translate-x-10 translate-x-[45px]">
+
+      {/* Right Content */}
+      <div className="relative" data-aos="fade-left" data-aos-delay="300">
+        {/* User Images & Clients Count */}
+        <div className="flex absolute right-0">
+          <div className="flex md:translate-x-10 translate-x-[42px]">
             <img
               src={user1}
-              className="md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px]"
+              className="md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px] shadow-lg"
               alt="user1"
             />
             <img
               src={user2}
-              className="-translate-x-4 md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px]"
-              alt="user1"
+              className="-translate-x-4 md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px] shadow-lg"
+              alt="user2"
             />
             <img
               src={user3}
-              className="-translate-x-9 md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px]"
-              alt="user1"
+              className="-translate-x-9 md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px] shadow-lg"
+              alt="user3"
             />
           </div>
-          <div className="md:w-[190px] w-[130px] md:h-[61px] h-[42px]  bg-[#191919] md:p-[20.84px] p-[6px] flex justify-center items-center text-white inter font-[600] md:text-[16.82px] md:leading-[20.36px] text-[12px] -translate-x-1  rounded-[56px]">
+          <div className="md:w-[190px] w-[130px] md:h-[61px] h-[42px] bg-[#191919] md:p-[20.84px] p-[6px] flex justify-center items-center text-white inter font-[600] md:text-[16.82px] text-[12px] -translate-x-1 rounded-[56px]">
             2k+ Happy Clients
           </div>
         </div>
-        <img src={user} alt="" />
+
+        {/* Profile Image */}
+        <img src={user} alt="Profile" className="shadow-xl rounded-lg" />
+
+        {/* Play Intro Button */}
         <div
-          onClick={() => setIsOpen(!isOpen)}
-          className="absolute bottom-[4px] md:bottom-0 left-0 md:w-[191px] w-[115px] md:h-[68px] h-[42px] bg-[#191919] md:p-[20.84px]  text-white inter font-[400] md:text-[18.82px] md:leading-[24.36px] text-[14px]  rounded-[56px] flex items-center justify-center gap-3 cursor-pointer lg:mt-0 mt-3"
+          onClick={() => setIsOpen(true)}
+          className="absolute bottom-[4px] md:bottom-0 left-0 md:w-[191px] w-[122px] md:h-[68px] h-[42px] bg-[#191919] md:p-[20.84px] text-white inter font-[400] md:text-[18.82px] text-[14px] rounded-[56px] flex items-center justify-center gap-3 cursor-pointer hover:bg-opacity-80 transition-all"
         >
-          <img className="w-4 h-4 md:h-6 md:w-6" src={playbutton} alt="" />
+          <img className="w-4 h-4 md:h-6 md:w-6" src={playbutton} alt="Play" />
           <span>Play Intro</span>
         </div>
       </div>
+
+      {/* Video Modal */}
       {isOpen && (
-        <div className="transition-all duration-500 ease-in-out h-screen  w-full fixed inset-0 bg-black flex justify-center items-center  bg-opacity-85 before:relative z-50">
+        <div
+          className="fixed inset-0 bg-black bg-opacity-85 flex justify-center items-center transition-opacity duration-500"
+          data-aos="fade-in"
+        >
+          {/* Close Button */}
           <div
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-white text-2xl absolute right-36 top-5 cursor-pointer"
+            onClick={() => setIsOpen(false)}
+            className="text-white text-2xl absolute right-10 tomd:p-5 p-3 cursor-pointer hover:text-red-500 transition-all"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-white cursor-pointer"
+              className="w-6 h-6"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -102,9 +137,11 @@ const Header: React.FC = () => {
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </div>
+
+          {/* Video Player */}
           <div className="lg:w-[1024px] lg:h-[576px] md:w-[640px] md:h-[360px] w-full h-full overflow-hidden rounded-2xl bg-[#191919]">
             <ReactPlayer
-              url={`https://vimeo.com/1007475654?share=copyhttps://youtu.be/p1nUaBwX2RE?si=ngksm1cTCFUIP0-M`}
+              url="https://youtu.be/KNK0DdMh1ZY?si=MXF2PhFhcPzPbUvS"
               controls
               width="100%"
               height="100%"
