@@ -1,16 +1,11 @@
-import Aos from "aos";
-import React, { useEffect } from "react";
+
+import React from "react";
 interface prop {
   title: string;
   subtitle: string;
 }
 const Heading: React.FC<prop> = ({ title, subtitle }) => {
-  useEffect(() => {
-    Aos.init({
-      duration: 1000,
-      easing: "ease-in-out",
-    });
-  }, []);
+
   return (
     <div className=" flex justify-center flex-col items-center gap-1 inter">
       <div

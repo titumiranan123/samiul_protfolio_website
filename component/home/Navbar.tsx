@@ -1,8 +1,11 @@
+'use client'
 import React, { useState } from "react";
-import logo from "./../assets/logo.png";
-import arrow from "./../assets/arrow.png";
-import { Link } from "react-router-dom";
-import close from "./../assets/close.png";
+import logo from "@/public/assets/logo.png";
+import arrow from "@/public/assets/arrow.png";
+
+import close from "@/public/assets/close.png";
+import Link from "next/link";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
@@ -13,9 +16,9 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="max-w-[1440px] lg:px-[110px] px-4 lg:py-10 md:py-8 py-8 mx-auto flex justify-between items-center inter relative">
-      <img src={logo} alt="logo" />
+      <Image src={logo} alt="logo" />
       <div className="lg:flex hidden items-center gap-4 text-white">
-        <Link className="text-[20px] font-[700]" to="#">
+        <Link className="text-[20px] font-[700]" href="#">
           Home
         </Link>
         <a className="text-[20px] font-[500]" href="#works">
@@ -29,14 +32,14 @@ const Navbar: React.FC = () => {
         </a>
       </div>
       <Link
-        to={"https://calendly.com/imonofficial2/30min?month=2024-07"}
+        href={"https://calendly.com/imonofficial2/30min?month=2024-07"}
         target="_blank"
         className="text-white inter border p-5 w-[170px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] lg:flex hidden gap-2 items-center justify-center group"
       >
         <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">
           Contact
         </span>
-        <img
+        <Image
           src={arrow}
           alt="arrow"
           className="w-[20px] group-hover:translate-x-1 transition-all duration-200 ease-in-out"
@@ -57,7 +60,7 @@ const Navbar: React.FC = () => {
             onClick={toggle}
             className="flex flex-col absolute top-[40px] right-[20px] cursor-pointer"
           >
-            <img className="w-8 h-8" src={close} alt="close" />
+            <Image className="w-8 h-8" src={close} alt="close" />
           </div>
           <div className="flex flex-col items-center justify-center gap-1 h-full">
             <a onClick={toggle} className="text-[20px] font-[700]" href="#">

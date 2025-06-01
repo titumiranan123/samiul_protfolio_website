@@ -6,12 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import julian from "./../assets/testimonial/julian.png";
-import cia from "./../assets/testimonial/cia.png";
-import marc from "./../assets/testimonial/marc.png";
-import breanna from "./../assets/testimonial/breanna.png";
+import julian from "@/public/assets/testimonial/julian.png";
+import cia from "@/public/assets/testimonial/cia.png";
+import marc from "@/public/assets/testimonial/marc.png";
+import breanna from "@/public/assets/testimonial/breanna.png";
 import { Navigation, Pagination } from "swiper/modules";
 import Heading from "./Heading";
+import Image from "next/image";
 
 const Successstory: React.FC = () => {
   const testimonialsData = [
@@ -86,7 +87,7 @@ const Successstory: React.FC = () => {
                 </div>
                 <div className="flex gap-5 items-center mt-10">
                   <div className="w-[80px] h-[80px] rounded-full overflow-hidden">
-                    <img
+                    <Image
                       src={testimonial.image}
                       className="w-[100px] h-[80px] rounded-full"
                       alt={testimonial.name}

@@ -1,7 +1,8 @@
 import React from "react";
 import Heading from "./Heading";
-import arrow from "./../assets/arrow.png";
-import { Link } from "react-router-dom";
+import arrow from "@/public/assets/arrow.png";
+import Link from "next/link";
+import Image from "next/image";
 const Contactfrom: React.FC = () => {
   return (
     <div
@@ -29,7 +30,7 @@ const Contactfrom: React.FC = () => {
             </h1>
             <Link
               target="_blank"
-              to={"/https://www.instagram.com/_samiul_arafat/"}
+              href={"/https://www.instagram.com/_samiul_arafat/"}
               className="text-[18px] font-[400] leading-[24.3px]"
             >
               _samiul_arafat
@@ -41,7 +42,7 @@ const Contactfrom: React.FC = () => {
             </h1>
             <Link
               target="_blank"
-              to={
+              href={
                 "https://www.linkedin.com/in/samiul-arafat/?originalSubdomain=bd"
               }
               className="text-[18px] font-[400] leading-[24.3px]"
@@ -72,17 +73,18 @@ const Contactfrom: React.FC = () => {
               <textarea className="border-b bg-[#191919] outline-none focus:outline-none text-white" />
             </div>
             <Link
-              to={"https://calendly.com/imonofficial2/30min?month=2024-07"}
+              href={"https://calendly.com/imonofficial2/30min?month=2024-07"}
               target="_blank"
               className="text-white inter mt-20 flex   p-5  rounded-[16px] font-[500] text-[15px] leading-[18.15px] lg:flex  gap-2 items-center justify-center group bg-[#2919DD]"
             >
               <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">
                 Send Message
               </span>
-              <img
+              <Image
                 src={arrow}
                 alt="arrow"
                 className="w-[20px] group-hover:translate-x-1 transition-all duration-200 ease-in-out"
+                priority
               />
             </Link>
           </form>

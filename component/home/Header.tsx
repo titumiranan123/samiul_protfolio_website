@@ -1,24 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+"use client"
+import React, {  useState } from "react";
 import ReactPlayer from "react-player";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import user from "./../assets/samiul.png";
-import arrow from "./../assets/arrow.png";
-import user1 from "./../assets/user1.png";
-import user2 from "./../assets/user2.png";
-import user3 from "./../assets/user3.png";
-import playbutton from "./../assets/play.png";
+
+import user from "@/public/assets/samiul.png";
+import arrow from "@/public/assets/arrow.png";
+import user1 from "@/public/assets/user1.png";
+import user2 from "@/public/assets/user2.png";
+import user3 from "@/public/assets/user3.png";
+import playbutton from "@/public/assets/play.png";
+import Link from "next/link";
+import Image from "next/image";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-    });
-  }, []);
+  
 
   return (
     <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto mt-[40px] flex md:flex-row justify-between flex-col">
@@ -43,13 +39,13 @@ const Header: React.FC = () => {
         <div className="flex gap-4 mt-[70px] animate-fade-in">
           <Link
             target="_blank"
-            to="https://calendly.com/imonofficial2/30min?month=2024-07"
+            href="https://calendly.com/imonofficial2/30min?month=2024-07"
             className="text-white inter md:p-5 md:py-0 md:px-0 py-5 px-3 md:w-[170px] w-[150px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] flex  gap-2 items-center justify-center group bg-[#2919DD] hover:bg-[#1e14b3] transition-all"
           >
             <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">
               Contact Now
             </span>
-            <img
+            <Image
               src={arrow}
               alt="arrow"
               className="w-[20px] group-hover:translate-x-1 transition-all duration-200 ease-in-out"
@@ -58,13 +54,13 @@ const Header: React.FC = () => {
 
           <Link
             target="_blank"
-            to="https://calendly.com/imonofficial2/30min?month=2024-07"
+            href="https://calendly.com/imonofficial2/30min?month=2024-07"
             className="text-white inter border md:p-5 p-3 md:w-[170px] w-[150px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] flex  gap-2 items-center justify-center group hover:bg-white hover:text-black transition-all"
           >
             <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">
               Book a Call
             </span>
-            <img
+            <Image
               src={arrow}
               alt="arrow"
               className="w-[20px] group-hover:translate-x-1 transition-all duration-200 ease-in-out"
@@ -78,17 +74,17 @@ const Header: React.FC = () => {
         {/* User Images & Clients Count */}
         <div className="flex absolute right-0">
           <div className="flex md:translate-x-10 translate-x-[42px]">
-            <img
+            <Image
               src={user1}
               className="md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px] shadow-lg"
               alt="user1"
             />
-            <img
+            <Image
               src={user2}
               className="-translate-x-4 md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px] shadow-lg"
               alt="user2"
             />
-            <img
+            <Image
               src={user3}
               className="-translate-x-9 md:w-[61.68px] md:h-[61.68px] rounded-full w-[42px] h-[42px] shadow-lg"
               alt="user3"
@@ -100,14 +96,14 @@ const Header: React.FC = () => {
         </div>
 
         {/* Profile Image */}
-        <img src={user} alt="Profile" className="shadow-xl rounded-lg" />
+        <Image src={user} alt="Profile" className="shadow-xl rounded-lg" />
 
         {/* Play Intro Button */}
         <div
           onClick={() => setIsOpen(true)}
           className="absolute bottom-[4px] md:bottom-0 left-0 md:w-[191px] w-[122px] md:h-[68px] h-[42px] bg-[#191919] md:p-[20.84px] text-white inter font-[400] md:text-[18.82px] text-[14px] rounded-[56px] flex items-center justify-center gap-3 cursor-pointer hover:bg-opacity-80 transition-all"
         >
-          <img className="w-4 h-4 md:h-6 md:w-6" src={playbutton} alt="Play" />
+          <Image className="w-4 h-4 md:h-6 md:w-6" src={playbutton} alt="Play" />
           <span>Play Intro</span>
         </div>
       </div>

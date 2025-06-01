@@ -1,6 +1,7 @@
 import React from "react";
 import Heading from "./Heading";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+
 
 const About: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const About: React.FC = () => {
           on platforms like{" "}
           <Link
             className="underline"
-            to={"https://www.youtube.com/@montagemotion77"}
+            href={"https://www.youtube.com/@montagemotion77"}
             target="_blank"
           >
             Youtube
@@ -24,7 +25,7 @@ const About: React.FC = () => {
           and{" "}
           <Link
             className="underline"
-            to={"Facebookhttps://www.facebook.com/Samiul.Bhaiya/"}
+            href={"Facebookhttps://www.facebook.com/Samiul.Bhaiya/"}
             target="_blank"
           >
             Facebook
