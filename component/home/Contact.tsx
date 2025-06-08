@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 const Contact: React.FC = () => {
   return (
-    <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[100px] mt-[80px]">
+    <div className=" container  lg:mt-[100px] mt-[80px]">
       <div className="rounded-[16px] flex justify-center items-center flex-col gap-4 bg-[#191919] shadow-md max-w-[1200px] mx-auto h-[300px] py-[50px] px-5">
         <h1 className="inter font-bold italic lg:text-[64px] lg:leading-[76.6px] text-[24px] leading-[24px] text-white ">
           Have A project ?

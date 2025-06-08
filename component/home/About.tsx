@@ -7,7 +7,7 @@ const About: React.FC = () => {
   return (
     <div
       id="about"
-      className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[100px] mt-[80px]"
+      className=" container  lg:mt-[100px] mt-[80px]"
     >
       <Heading title="About" subtitle="" />
       <div className="lg:w-[784px] mx-auto">

@@ -14,12 +14,11 @@ import Image from "next/image";
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  
 
   return (
-    <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto mt-[40px] flex md:flex-row justify-between flex-col">
+    <div className=" container  mt-[40px] flex md:flex-row justify-between flex-col">
       {/* Left Content */}
-      <div className="content lg:w-[615px] h-[450px]  w-full">
+      <div className="content lg:w-[615px] h-[450px] w-full">
         <h1
           data-aos="fade-right"
           className="inter lg:text-[160px] lg:leading-[160px] text-[64px] leading-[72px] lg:mb-0 mb-3 font-[900] uppercase text-white"
@@ -31,16 +30,15 @@ const Header: React.FC = () => {
           data-aos-delay="100"
           className="text-white lg:w-[615px] font-[400] text-[20px] leading-[27px] mt-[16px] tracking-tighter"
         >
-          Hi, I am Samiul, helping Podcasters & Coaches with Video Editing and
-          Thumbnail Design
+          Hi, I am Samiul, helping Podcasters & Coaches with Video Editing and Thumbnail Design
         </p>
 
         {/* Buttons */}
-        <div className="flex gap-4 mt-[70px] animate-fade-in">
+        <div className="flex gap-4 mt-[70px] animate-fade-in" data-aos="fade-up" data-aos-delay="200">
           <Link
             target="_blank"
             href="https://calendly.com/imonofficial2/30min?month=2024-07"
-            className="text-white inter md:p-5 md:py-0 md:px-0 py-5 px-3 md:w-[170px] w-[150px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] flex  gap-2 items-center justify-center group bg-[#2919DD] hover:bg-[#1e14b3] transition-all"
+            className="text-white inter md:p-5 md:py-0 md:px-0 py-5 px-3 md:w-[170px] w-[150px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] flex gap-2 items-center justify-center group bg-[#2919DD] hover:bg-[#1e14b3] transition-all"
           >
             <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">
               Contact Now
@@ -55,7 +53,7 @@ const Header: React.FC = () => {
           <Link
             target="_blank"
             href="https://calendly.com/imonofficial2/30min?month=2024-07"
-            className="text-white inter border md:p-5 p-3 md:w-[170px] w-[150px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] flex  gap-2 items-center justify-center group hover:bg-white hover:text-black transition-all"
+            className="text-white inter border md:p-5 p-3 md:w-[170px] w-[150px] rounded-[16px] font-[500] text-[15px] leading-[18.15px] flex gap-2 items-center justify-center group hover:bg-white hover:text-black transition-all"
           >
             <span className="group-hover:translate-x-1 transition-all duration-200 ease-in-out">
               Book a Call
@@ -102,6 +100,8 @@ const Header: React.FC = () => {
         <div
           onClick={() => setIsOpen(true)}
           className="absolute bottom-[4px] md:bottom-0 left-0 md:w-[191px] w-[122px] md:h-[68px] h-[42px] bg-[#191919] md:p-[20.84px] text-white inter font-[400] md:text-[18.82px] text-[14px] rounded-[56px] flex items-center justify-center gap-3 cursor-pointer hover:bg-opacity-80 transition-all"
+          data-aos="zoom-in"
+          data-aos-delay="400"
         >
           <Image className="w-4 h-4 md:h-6 md:w-6" src={playbutton} alt="Play" />
           <span>Play Intro</span>
@@ -118,6 +118,7 @@ const Header: React.FC = () => {
           <div
             onClick={() => setIsOpen(false)}
             className="text-white text-2xl absolute right-10 tomd:p-5 p-3 cursor-pointer hover:text-red-500 transition-all"
+            data-aos="zoom-in"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +136,10 @@ const Header: React.FC = () => {
           </div>
 
           {/* Video Player */}
-          <div className="lg:w-[1024px] lg:h-[576px] md:w-[640px] md:h-[360px] w-full h-full overflow-hidden rounded-2xl bg-[#191919]">
+          <div
+            className="lg:w-[1024px] lg:h-[576px] md:w-[640px] md:h-[360px] w-full h-full overflow-hidden rounded-2xl bg-[#191919]"
+            data-aos="zoom-in"
+          >
             <ReactPlayer
               url="https://youtu.be/KNK0DdMh1ZY?si=MXF2PhFhcPzPbUvS"
               controls

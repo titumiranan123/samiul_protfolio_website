@@ -1,10 +1,7 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
-import Modal from "react-modal";
-
-// Set the app element for accessibility
-Modal.setAppElement("#root");
+import Modal from "./Modal"; // Adjust path as needed
 
 interface CardProp {
   item: {
@@ -17,21 +14,12 @@ interface CardProp {
 const NewworkCard: React.FC<CardProp> = ({ item }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
   return (
     <div
-      className={`ms-4 ${
-        item.video_category === "full"
-          ? "w-[280px] md:w-[500px]"
-          : "md:w-[158px] w-[96px]"
-      }  md:h-[281px]  h-[169px] relative`}
+      className={` overflow-hidden w-[280px] md:w-[588px] md:h-[331px] h-[169px] relative rounded-[12px] mx-auto`}
     >
       <ReactPlayer
         url={item.video_link}
@@ -42,27 +30,10 @@ const NewworkCard: React.FC<CardProp> = ({ item }) => {
         onClickPreview={handleOpenModal}
       />
 
-      {/* Modal for playing the video */}
       <Modal
         isOpen={isModalOpen}
-        onRequestClose={handleCloseModal}
+        onClose={handleCloseModal}
         contentLabel="Video Player"
-        style={{
-          overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.75)",
-          },
-          content: {
-            top: "50%",
-            left: "50%",
-            right: "auto",
-            bottom: "auto",
-            marginRight: "-50%",
-            transform: "translate(-50%, -50%)",
-            padding: "0",
-            border: "none",
-            background: "none",
-          },
-        }}
       >
         <ReactPlayer
           url={item.video_link}

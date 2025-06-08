@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Heading from "./Heading";
 import arrow from "@/public/assets/arrow.png";
 import Link from "next/link";
 import Image from "next/image";
 const Contactfrom: React.FC = () => {
+  const [contacts,setContactInfo]= useState({
+    name:"",
+    email:"",
+    message:""
+  })
+  console.log('contacts',contacts)
+  const handleSubmit = ()=>{
+ 
+  }
   return (
     <div
       id="contact"
-      className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[100px] mt-[80px]"
+      className=" container  lg:mt-[100px] mt-[80px]"
     >
       <Heading title="Contact" subtitle="" />
       <div className="flex justify-between lg:flex-row flex-col items-center gap-10 mt-20">
@@ -58,6 +67,7 @@ const Contactfrom: React.FC = () => {
               <label className="text-white">Your Name</label>
               <input
                 type="text"
+                onChange={(e)=> setContactInfo({...contacts,name:e.target.value})}
                 className="border-b bg-[#191919] outline-none focus:outline-none text-white"
               />
             </div>
@@ -65,12 +75,13 @@ const Contactfrom: React.FC = () => {
               <label className="text-white">Email</label>
               <input
                 type="email"
+                onChange={(e)=> setContactInfo({...contacts,email:e.target.value})}
                 className="border-b bg-[#191919] outline-none focus:outline-none text-white"
               />
             </div>
             <div className="flex flex-col gap-2 ">
               <label className="text-white">Message</label>
-              <textarea className="border-b bg-[#191919] outline-none focus:outline-none text-white" />
+              <textarea onChange={(e)=> setContactInfo({...contacts,message:e.target.value})} className="border-b bg-[#191919] outline-none focus:outline-none text-white" />
             </div>
             <Link
               href={"https://calendly.com/imonofficial2/30min?month=2024-07"}

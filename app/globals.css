@@ -6,11 +6,13 @@ body {
   background-color: #020202;
 }
 .dmsans {
-  font-family: "DM Sans", serif;
+  font-family:var(--font-dm-sans);
 }
-
+.container {
+  @apply max-w-[1440px] lg:px-[122px] px-4 mx-auto;
+}
 .inter {
-  font-family: "Inter", serif;
+  font-family:var(--font-inter);
 }
 .mark {
   text-shadow: -1px 0 0.1px white, 0 1px 1px white, 1px 0 1px white;

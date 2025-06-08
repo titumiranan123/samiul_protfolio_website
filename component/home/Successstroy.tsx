@@ -49,7 +49,7 @@ const Successstory: React.FC = () => {
   const swiperRef = useRef<any>(null); // Swiper reference
 
   return (
-    <div className="max-w-[1440px] lg:px-[110px] px-4 mx-auto lg:mt-[100px] mt-[80px] relative">
+    <div className=" container  lg:mt-[100px] mt-[80px] relative">
       <Heading title="Testimonial" subtitle="" />
 
       <div className="mt-12 md:h-[900px]">
