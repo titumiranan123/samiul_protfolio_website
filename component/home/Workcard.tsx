@@ -9,7 +9,7 @@ interface cardProp {
   index: number;
   onPlayChange: (isPlaying: boolean) => void;
 }
-const Workcard: React.FC<cardProp> = ({ item, index, onPlayChange }) => {
+export default function ({ item, index, onPlayChange }:cardProp) {
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
   const handlePlay = () => {
     setPlayingIndex(index);
@@ -43,4 +43,3 @@ const Workcard: React.FC<cardProp> = ({ item, index, onPlayChange }) => {
   );
 };
 
-export default Workcard;

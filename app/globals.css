@@ -49,9 +49,6 @@ body {
   background: #9391a8;
   height: 12px !important;
   width: 12px;
-  /* position: absolute !important;
-  right: 0 !important;
-  top: 50% !important; */
   transition: all ease-in-out 500ms;
 }
 
@@ -127,4 +124,32 @@ body {
 .custom-dot.swiper-pagination-bullet-active {
   background-color: #1138e6;
   height: 20px !important;
+}
+
+ /* aos */
+:root {
+  --aos-distance: 30px !important;
+}
+
+[data-aos^="fade"][data-aos^="fade"] {
+  transform: translate3d(0, var(--aos-distance), 0);
+}
+
+[data-aos="fade-up"] {
+  transform: translate3d(0, var(--aos-distance), 0);
+}
+
+[data-aos="fade-down"] {
+  transform: translate3d(0, calc(-1 * var(--aos-distance)), 0);
+}
+
+[data-aos="fade-left"] {
+  transform: translate3d(var(--aos-distance), 0, 0);
+}
+
+[data-aos="fade-right"] {
+  transform: translate3d(calc(-1 * var(--aos-distance)), 0, 0);
+}
+[data-aos="zoom-in"] {
+  transform: translate3d(calc(-1 * var(--aos-distance) / 4), 0, 0);
 }

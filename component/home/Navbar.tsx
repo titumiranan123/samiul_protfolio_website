@@ -7,7 +7,7 @@ import close from "@/public/assets/close.png";
 import Link from "next/link";
 import Image from "next/image";
 
-const Navbar: React.FC = () => {
+export default function Navbar()  {
   const [isOpen, setOpen] = useState(false);
 
   const toggle = () => {
@@ -94,4 +94,3 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;

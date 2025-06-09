@@ -10,8 +10,7 @@ interface CardProp {
     video_category: string;
   };
 }
-
-const NewworkCard: React.FC<CardProp> = ({ item }) => {
+export default function NewworkCard ({ item }:CardProp)  {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => setIsModalOpen(true);
@@ -47,4 +46,3 @@ const NewworkCard: React.FC<CardProp> = ({ item }) => {
   );
 };
 
-export default NewworkCard;

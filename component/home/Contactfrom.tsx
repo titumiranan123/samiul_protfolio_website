@@ -3,7 +3,7 @@ import Heading from "./Heading";
 import arrow from "@/public/assets/arrow.png";
 import Link from "next/link";
 import Image from "next/image";
-const Contactfrom: React.FC = () => {
+export default function Contactfrom () {
   const [contacts,setContactInfo]= useState({
     name:"",
     email:"",
@@ -105,4 +105,4 @@ const Contactfrom: React.FC = () => {
   );
 };
 
-export default Contactfrom;
+;

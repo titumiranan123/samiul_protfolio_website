@@ -14,7 +14,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import Heading from "./Heading";
 import Image from "next/image";
 
-const Successstory: React.FC = () => {
+export default function Successstory ()  {
   const testimonialsData = [
     {
       id: 4,
@@ -126,4 +126,4 @@ const Successstory: React.FC = () => {
   );
 };
 
-export default Successstory;
+

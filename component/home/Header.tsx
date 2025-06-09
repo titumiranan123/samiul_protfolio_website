@@ -11,7 +11,7 @@ import playbutton from "@/public/assets/play.png";
 import Link from "next/link";
 import Image from "next/image";
 
-const Header: React.FC = () => {
+export default function Header ()  {
   const [isOpen, setIsOpen] = useState(false);
 
 
@@ -21,20 +21,21 @@ const Header: React.FC = () => {
       <div className="content lg:w-[615px] h-[450px] w-full">
         <h1
           data-aos="fade-right"
+            data-aos-delay="200"
           className="inter lg:text-[160px] lg:leading-[160px] text-[64px] leading-[72px] lg:mb-0 mb-3 font-[900] uppercase text-white"
         >
           Video Editor
         </h1>
         <p
           data-aos="fade-up"
-          data-aos-delay="100"
+          data-aos-delay="300"
           className="text-white lg:w-[615px] font-[400] text-[20px] leading-[27px] mt-[16px] tracking-tighter"
         >
           Hi, I am Samiul, helping Podcasters & Coaches with Video Editing and Thumbnail Design
         </p>
 
         {/* Buttons */}
-        <div className="flex gap-4 mt-[70px] animate-fade-in" data-aos="fade-up" data-aos-delay="200">
+        <div className="flex gap-4 mt-[40px] animate-fade-in" data-aos="fade-up" data-aos-delay="200">
           <Link
             target="_blank"
             href="https://calendly.com/imonofficial2/30min?month=2024-07"
@@ -154,4 +155,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+

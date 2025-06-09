@@ -8,7 +8,7 @@ interface ModalProps {
   contentLabel?: string;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, contentLabel }) => {
+export default function Modal({ isOpen, onClose, children, contentLabel }:ModalProps) {
   // Prevent background scrolling when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -42,4 +42,4 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, contentLabel }
   );
 };
 
-export default Modal;
+

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Heading from "./Heading";
 import NewworkCard from "./Newworkcard";
 
-const Mywork: React.FC = () => {
+export default function Mywork() {
   const [data, setData] = useState([]);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
@@ -38,4 +38,3 @@ const Mywork: React.FC = () => {
   );
 };
 
-export default Mywork;

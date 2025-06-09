@@ -2,14 +2,12 @@
 import React, { useEffect } from 'react';
 import AOS from "aos";
 import "aos/dist/aos.css";
-const Aosinit = () => {
+export default function Aosinit ()  {
     useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
     });
   }, []);
-    return null
+    return <></>
 };
-
-export default Aosinit;

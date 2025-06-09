@@ -3,7 +3,7 @@ import Heading from "./Heading";
 import Link from "next/link";
 
 
-const About: React.FC = () => {
+export default function About(){
   return (
     <div
       id="about"
@@ -46,4 +46,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+
